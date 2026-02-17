@@ -34,9 +34,7 @@ A comprehensive event management platform for GeeksforGeeks clubs to manage admi
 Before you begin, ensure you have the following installed:
 
 - **Node.js** (v14.0.0 or higher) - [Download](https://nodejs.org/)
-- **npm** (comes with Node.js)
-- **PostgreSQL** (v12 or higher) - [Download](https://www.postgresql.org/download/)
-- **Git** (optional, for cloning)
+- **Git** (for cloning)
 
 ---
 
@@ -46,7 +44,7 @@ Before you begin, ensure you have the following installed:
 
 ```bash
 # Using git
-git clone <repository-url>
+git clone https://github.com/GeeksForGeeksSIT/event_management.git
 cd gfg_event_management
 
 # Or extract the ZIP file and navigate to the folder
@@ -62,19 +60,13 @@ This will install all required packages listed in `package.json`.
 
 ### Step 3: Configure Environment Variables
 
-Create a `.env` file in the project root with the following variables:
+Run the following command to copy the example environment file:
 
-```
-PORT=3000
-DB_HOST=localhost
-DB_PORT=5432
-DB_USER=postgres
-DB_PASSWORD=your_password
-DB_NAME=gfg_event_management
-JWT_SECRET=your_secret_key_here
+```bash
+cp .env.example .env
 ```
 
-Replace the values with your actual database credentials and a secure JWT secret.
+Then, edit the `.env` file and replace the placeholder values with your actual database credentials and a secure JWT secret.
 
 ---
 
@@ -88,12 +80,6 @@ npm run dev
 
 The server will start on `http://localhost:3000`
 
-### Production Mode
-
-```bash
-npm start
-```
-
 ---
 
 ## Technology Stack
@@ -104,6 +90,12 @@ npm start
 - **Password Hashing:** bcrypt
 - **Validation:** Custom validators
 - **Environment:** dotenv
+
+---
+
+## API Documentation
+
+For detailed API documentation, see [ADMIN_API_DOCUMENTATION.md](ADMIN_API_DOCUMENTATION.md)
 
 ---
 
