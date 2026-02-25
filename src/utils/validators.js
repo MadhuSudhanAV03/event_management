@@ -159,6 +159,10 @@ export const validateFullName = (name) => {
  * Validate positive integer (for RoleID, BranchID)
  */
 export const validatePositiveInteger = (value, fieldName) => {
+  if (value === undefined || value === null || value === '') {
+    throw createValidationError(ERROR_CODES.MISSING_FIELD, `${fieldName} is missing`);
+  }
+
   const num = parseInt(value, 10);
   if (isNaN(num) || num <= 0) {
     throw createValidationError(

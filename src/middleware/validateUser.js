@@ -68,10 +68,10 @@ export const validateUserRegistrationInput = (req, res, next) => {
     validated.graduationYear = validateGraduationYear(graduationYear);
 
     // Validate UniID (mandatory)
-    validated.uniID = validatePositiveInteger(uniID, 'UniID');
+    validated.uniID = validatePositiveInteger(uniID, 'uniId');
 
     // Validate BranchID (mandatory)
-    validated.branchID = validatePositiveInteger(branchID, 'BranchID');
+    validated.branchID = validatePositiveInteger(branchID, 'branchId');
 
     // Merge validated data with existing request data
     req.validated = { ...(req.validated || {}), ...validated };
