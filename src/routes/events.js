@@ -30,17 +30,17 @@ router.get('/', getAllEventsHandler);
 router.get('/:id', getEventByIdHandler);
 
 /**
- * Public Venue Routes (No authentication required)
+ * Protected Event Management Routes (Admin authentication required)
  */
 
-// Get all venues
-router.get('/venues/all', getAllVenuesHandler);
+// Get all venues (Admin only)
+router.get('/venues/all', authenticateAdmin, getAllVenuesHandler);
 
-// Get venue by ID
-router.get('/venues/:id', getVenueByIdHandler);
+// Get venue by ID (Admin only)
+router.get('/venues/:id', authenticateAdmin, getVenueByIdHandler);
 
 /**
- * Protected Event Management Routes (Admin authentication required)
+ * Protected Event Management Operations (President & Vice-President only)
  */
 
 // Create new event (President & Vice-President only)
